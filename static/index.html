@@ -2,15 +2,18 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8"/>
+
     <title>Сервіс Обліку Студентів</title>
-    <meta name="description"
-          value="Система Обліку Студентів Навчального Закладу"/>
-    <!-- Include styles -->
+
+    <meta name="description" value="Система Обліку Студентів Навчального Закладу">
+
+    <!-- Include Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="./css/main.css">
+
   </head>
   <body>
-
     <!-- Start Container -->
     <div class="container">
 
@@ -25,11 +28,11 @@
         <!-- Groups Selector -->
         <div class="col-xs-4" id="group-selector">
           <strong>Група:</strong>
-            <select>
-              <option value="">Усі Студенти</option>
-              <option value="">МтМ - 21, Подоба Віталій (№ 254)</option>
-              <option value="">МтМ - 22, Корост Андрій (№ 2123)</option>
-            </select>
+          <select>
+            <option value="">Усі Студенти</option>
+            <option value="">МтМ - 21, Подоба Віталій (№ 254)</option>
+            <option value="">МтМ - 22, Корост Андрій (№ 2123)</option>
+          </select>
         </div>
       </div>
       <!-- End Header -->
@@ -39,22 +42,24 @@
         <div class="col-xs-12">
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#">Студенти</a></li>
-            <li role="presentation"> <a href="#">Відвідування</a></li>
-            <li role="presentation"> <a href="#">Групи</a></li>
+            <li role="presentation"><a href="#">Відвідування</a></li>
+            <li role="presentation"><a href="#">Групи</a></li>
           </ul>
         </div>
       </div>
       <!-- End SubHeader -->
 
       <!-- Start Main Page Content -->
-      <div class="row"id="content-columns">
+      <div class="row" id="content-columns">
 
-        <div class="col-xs-12"id="content-column">
+        <div class="col-xs-12" id="content-column">
           <!-- Status Message -->
           <div class="alert alert-warning">Зміни скасовано.</div>
+
           <h2>База Студентів</h2>
-          <!-- Add Student Button -->
+
           <a class="btn btn-primary" href="#">Додати Студента</a>
+
           <div>
             <!-- Start Students Listing -->
             <table class="table table-hover table-striped">
@@ -98,9 +103,9 @@
                 <tr>
                   <td>2</td>
                   <td><img height="30" width="30" class="img-circle" src="./img/piv.png"></td>
-                  <td><a title="Редагувати" href="#">Макаров</a></td>
-                  <td><a title="Редагувати" href="#">Артем</a></td>
-                  <td>4321</td>
+                  <td><a title="Редагувати" href="#">Подоба</a></td>
+                  <td><a title="Редагувати" href="#">Віталій</a></td>
+                  <td>254</td>
                   <td>
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
@@ -124,9 +129,9 @@
                 <tr>
                   <td>3</td>
                   <td><img height="30" width="30" class="img-circle" src="./img/podoba3.jpg"></td>
-                  <td><a title="Редагувати" href="#">Піманкова</a></td>
-                  <td><a title="Редагувати" href="#">Наталія</a></td>
-                  <td>1234</td>
+                  <td><a title="Редагувати" href="#">Притула</a></td>
+                  <td><a title="Редагувати" href="#">Тарас</a></td>
+                  <td>5332</td>
                   <td>
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
@@ -160,7 +165,6 @@
                 <li><a href="#">&raquo;</a> </li>
               </ul>
             </nav>
-            <!-- End Students Listing -->
           </div>
         </div>
 
@@ -168,9 +172,9 @@
       <!-- End Main Page Content -->
 
       <!-- Start Footer -->
-      <div class="row"id="footer">
+      <div class="row" id="footer">
         <div class="col-xs-12">
-          &copy; 2016 Сервіс Обліку Студентів
+          &copy;2014 Сервіс Обліку Студентів
         </div>
       </div>
       <!-- End Footer -->
@@ -182,5 +186,9 @@
     <!-- Javascripts Section -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
   </body>
 </html>
+
+
+cp -R ~/Desktop/static/ /data/work/virtualenvs/studentsdb/src/studentsdb/
