@@ -55,3 +55,17 @@ h1,h2,h3,h4,h5,h6{
 .table-attendance td{
     border:1px solid #dddddd;
 }
+
+/* form Edit_Student*/
+form tr {
+    height: 40px;
+}
+form td:nth-child(2) input,
+form td:nth-child(2) select,
+form td:nth-child(2) textarea {
+    width: 220px;
+}
+
+form td:nth-child(2) .file {
+    width: 100%;
+}
