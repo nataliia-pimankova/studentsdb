@@ -1,0 +1,87 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Облік Відвідування{% endblock meta_title %}
+
+{% block title %}Облік Відвідування{% endblock title %}
+
+{% block content %}
+
+<div id="month">
+  <ul class="month-page">
+    <li><a href="?month={{ context.prev_month }}" title="Попередній Місяць">&larr;</a></li>
+    <li><strong>{{ context.month_verbose }} {{ context.year }}</strong></li>
+    <li><a href="?month={{ context.next_month }}" title='Наступний Місяць'>&rarr;</a></li>
+  </ul>
+</div>
+
+<!-- Start Students Listing -->
+<table class="table table-hover table-striped table-attendance">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Студент</th>
+      <th>Сб 1</th>
+      <th>Нд 2</th>
+      <th>Пн 3</th>
+      <th>Вт 4</th>
+      <th>Ср 5</th>
+      <th>Чт 6</th>
+      <th>Пт 7</th>
+      <th>Сб 8</th>
+      <th>Нд 9</th>
+      <th>Пн 10</th>
+      <th>Вт 11</th>
+      <th>Ср 12</th>
+      <th>Чт 13</th>
+      <th>Пт 14</th>
+      <th>Сб 15</th>
+      <th>Нд 16</th>
+      <th>Пн 17</th>
+      <th>Вт 18</th>
+      <th>Ср 19</th>
+      <th>Чт 20</th>
+      <th>Пт 21</th>
+      <th>Сб 22</th>
+      <th>Нд 23</th>
+      <th>Пн 24</th>
+      <th>Вт 25</th>
+      <th>Ср 26</th>
+      <th>Чт 27</th>
+      <th>Пт 28</th>
+      <th>Сб 29</th>
+      <th>Нд 30</th>
+      <th>Пн 31</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in journal %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>
+        <a title="Редагувати" href="{% url 'students_edit'  1  %}">
+          {{ student.student }}
+        </a>
+      </td>
+      {% comment %}
+      {% for day in 32 %}
+      <td>
+        <input type="checkbox" name="a" value="" {% if day in student.attendance %}checked{% endif %}>
+        {{ group.captain }}
+      </td>
+      {% endfor %}
+      {% endcomment %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<nav>
+  <ul class="pagination">
+    <li class="disabled"><a href="#">1</a> </li>
+    <li><a href="#">2</a> </li>
+    <li><a href="#">Далі</a> </li>
+  </ul>
+</nav>
+
+{% endblock content %}
