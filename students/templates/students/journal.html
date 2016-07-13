@@ -22,37 +22,11 @@
     <tr>
       <th>#</th>
       <th>Студент</th>
-      <th>Сб 1</th>
-      <th>Нд 2</th>
-      <th>Пн 3</th>
-      <th>Вт 4</th>
-      <th>Ср 5</th>
-      <th>Чт 6</th>
-      <th>Пт 7</th>
-      <th>Сб 8</th>
-      <th>Нд 9</th>
-      <th>Пн 10</th>
-      <th>Вт 11</th>
-      <th>Ср 12</th>
-      <th>Чт 13</th>
-      <th>Пт 14</th>
-      <th>Сб 15</th>
-      <th>Нд 16</th>
-      <th>Пн 17</th>
-      <th>Вт 18</th>
-      <th>Ср 19</th>
-      <th>Чт 20</th>
-      <th>Пт 21</th>
-      <th>Сб 22</th>
-      <th>Нд 23</th>
-      <th>Пн 24</th>
-      <th>Вт 25</th>
-      <th>Ср 26</th>
-      <th>Чт 27</th>
-      <th>Пт 28</th>
-      <th>Сб 29</th>
-      <th>Нд 30</th>
-      <th>Пн 31</th>
+      {% for day in context.month_header %}
+      <th>
+        {{ day.verbose }}<br> {{ day.day }}
+      </th>
+      {% endfor %}
     </tr>
   </thead>
   <tbody>
