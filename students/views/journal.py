@@ -26,37 +26,47 @@ def journal(request):
                                 'verbose': day_abbr[weekday(myear, mmonth, d)][:2]}
                                for d in range(1, number_of_days + 1)]
 
-    journal = (
+    days=[]
+    for day in range(1, number_of_days+1):
+        days.append({
+            'day': day,
+            'present': False,
+        })
+
+    t1 = [2, 3, 4, 5, 6, 8, ]
+    t2 = [3, 4, 5, 6, 10, ]
+    t3 = [4, 5, 9, ]
+    import copy
+    d1 = copy.deepcopy(days)
+    d2 = copy.deepcopy(days)
+    d3 = copy.deepcopy(days)
+    for day in d1:
+        if day['day'] in t1:
+            day['present'] = True
+
+    for day in d2:
+        if day['day'] in t2:
+            day['present'] = True
+
+    for day in d3:
+        if day['day'] in t3:
+            day['present'] = True
+
+    journal = [
         {
             'id': 1,
-            'student': 'Подоба Віталій',
-            'attendance': ({'2': True,},
-                           {'3': True,},
-                           {'4': True,},
-                           {'5': True,},
-                           {'6': True,},
-                           {'8': True,},
-                           ),
+            'fullname': 'Подоба Віталій',
+            'days': d1,
         },
         {
             'id': 2,
-            'student': 'Корост Андрій',
-            'attendance': (
-                {'3': True,},
-                {'4': True,},
-                {'5': True,},
-                {'6': True,},
-                {'10': True,},
-                           ),
+            'fullname': 'Корост Андрій',
+            'days': d2,
         },
         {
             'id': 3,
-            'student': 'Притула Тарас',
-            'attendance': (
-                           {'4': True,},
-                           {'5': True,},
-                           {'9': True,},
-                           ),
+            'fullname': 'Притула Тарас',
+            'days': d3,
         },
-    )
-    return render(request, 'students/journal.html', {'journal': journal, 'context': context})
+    ]
+    return render(request, 'students/journal.html', {'students': journal, 'context': context})
