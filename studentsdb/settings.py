@@ -132,3 +132,8 @@ TEMPLATE_CONTEXT_PROCESSORS = \
         "django.core.context_processors.request",
         "studentsdb.context_processors.student_proc",
 ]
+
+TEMPLATE_DIRS = (
+#    '/data/work/virtualenvs/studentsdb/src/studentsdb/students/templates/students',
+    os.path.join(os.path.dirname(__file__), 'templates/students').replace('\\','/'),
+)
