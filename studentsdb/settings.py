@@ -137,3 +137,7 @@ TEMPLATE_DIRS = (
 #    '/data/work/virtualenvs/studentsdb/src/studentsdb/students/templates/students',
     os.path.join(os.path.dirname(__file__), 'templates/students').replace('\\','/'),
 )
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
